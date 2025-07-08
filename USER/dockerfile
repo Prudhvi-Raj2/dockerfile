@@ -1,3 +1,4 @@
 FROM almalinux:9
 RUN useradd expense
-CMD ["sleep","10000"]
+USER expense
+CMD [ "sleep","10000" ]
