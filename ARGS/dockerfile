@@ -9,7 +9,7 @@ FROM almalinux:9
 # CMD [ "sleep","1000" ]
 
 
-USER ${username:-some_user}
+# USER ${username:-some_user}
 ARG username
 USER $username
 # ...
