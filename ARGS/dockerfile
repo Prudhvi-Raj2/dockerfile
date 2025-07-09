@@ -14,7 +14,7 @@ FROM almalinux:9
 # USER $username > /tmp/test.txt
 # ...FROM ubuntu
 ARG CONT_IMG_VER=v1.0.0
-#ENV CONT_IMG_VER=v1.0.0
+ENV CONT_IMG_VER=$CONT_IMG_VER
 RUN echo $CONT_IMG_VER >> /tmp/about.txt
 CMD [ "sleep","1000" ]
 
