@@ -2,7 +2,9 @@ FROM almalinux:9
 
 ARG course="DevOps" \
     learned_by="Prudhvi Raj" \
-    percentage="80%"
+    percentage="80%" \
+    student="loki"
 
 RUN echo "${learned_by} expert in ${course}" >  /tmp/about.txt
+RUN echo "HI ${student}" >> /tmp/about.txt
 CMD [ "sleep","1000" ]
