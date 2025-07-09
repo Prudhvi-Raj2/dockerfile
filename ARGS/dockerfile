@@ -1,7 +1,8 @@
 FROM almalinux:9
 
-ENV course="DevOps" \
+ARG course="DevOps" \
     learned_by="Prudhvi Raj" \
     percentage="80%"
+
 RUN echo "${learned_by} expert in ${course}" >  /tmp/about.txt
 CMD [ "sleep","1000" ]
