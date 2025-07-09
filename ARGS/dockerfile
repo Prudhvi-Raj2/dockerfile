@@ -12,8 +12,9 @@ FROM almalinux:9
 # #USER ${username:-some_user}
 # ARG username="prudhvi"
 # USER $username > /tmp/test.txt
-# CMD [ "sleep","1000" ]
 # ...FROM ubuntu
 ARG CONT_IMG_VER
 ENV CONT_IMG_VER=v1.0.0
 RUN echo $CONT_IMG_VER >> /tmp/about.txt
+CMD [ "sleep","1000" ]
+
