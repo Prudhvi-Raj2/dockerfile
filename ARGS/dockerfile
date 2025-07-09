@@ -10,6 +10,6 @@ FROM almalinux:9
 
 
 USER ${username:-some_user}
-ARG username
+ARG username="prudhvi"
 USER $username > /tmp/test.txt
 # ...
