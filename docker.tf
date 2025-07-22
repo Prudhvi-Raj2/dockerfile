@@ -2,22 +2,13 @@ resource "aws_instance" "this"{
     ami                    = "ami-09c813fb71547fc4f"
     vpc_security_group_ids = [aws_security_group.allow_tls.id]
     instance_type          = "t3.micro"
-
-
-  # provisioner "remote-exec" {
-  #   when = destroy
-  #   inline = [ 
-  #     "sudo systemctl stop nginx"
-  #    ]
-  # }
-    # user_data = file("${path.module}/install_docker.sh")
-    # user_data_replace_on_change = true   # <‑‑ auto‑recreate if script change
-   
-  root_block_device {
+root_block_device {
     volume_size = 50
     volume_type = "gp3"
   }
-  connection {
+  user_data = file("${path.module}/install_docker.sh")
+  user_data_replace_on_change = true   # <‑‑ auto‑recreate if script change
+/*   connection {
     type = "ssh"
     user = "ec2-user"
     password = "DevOps321"
@@ -40,7 +31,7 @@ resource "aws_instance" "this"{
     "sudo systemctl enable --now docker",
     "sudo usermod -aG docker ec2-user"
     ]    
-  }
+  } */
   tags = {
       Name = "docker"
   }
