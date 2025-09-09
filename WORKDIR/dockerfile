@@ -1,0 +1,6 @@
+FROM almalinux:9
+RUN mkdir prudhvi
+WORKDIR /prudhvi
+RUN echo "HI prudhvi" >textfile.txt
+
+CMD [ "sleep","10000" ]

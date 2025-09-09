@@ -1,0 +1,11 @@
+FROM almalinux:9
+
+ENV course="DevOps" \
+    learned="Prudhvi Raj" \
+    percentage="80%"
+
+RUN echo "${learned}" > /tmp/about.txt
+
+CMD [ "sleep" , "10000" ]
+
+

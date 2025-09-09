@@ -1,0 +1,5 @@
+FROM almalinux:9
+RUN useradd expense
+USER expense
+RUN echo "HI prudhvi" >textfile.txt
+CMD [ "sleep","10000" ]

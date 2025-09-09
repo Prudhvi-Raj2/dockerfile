@@ -1,0 +1,20 @@
+FROM almalinux:9
+
+# ARG course="DevOps" \
+#     learned_by="Prudhvi Raj" \
+#     percentage="80%" \
+#     student="loki"
+# RUN echo "${learned_by} expert in ${course}" >  /tmp/about.txt
+# RUN echo "HI ${student}" >> /tmp/about.txt
+# CMD [ "sleep","1000" ]
+
+# RUN useradd raj
+# #USER ${username:-some_user}
+# ARG username="prudhvi"
+# USER $username > /tmp/test.txt
+# ...FROM ubuntu
+ARG CONT_IMG_VER=v1.0.0
+ENV CONT_IMG_VER=$CONT_IMG_VER
+RUN echo $CONT_IMG_VER >> /tmp/about.txt
+CMD [ "sleep","1000" ]
+
